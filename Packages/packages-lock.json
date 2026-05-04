@@ -101,7 +101,7 @@
     },
     "com.unity.burst": {
       "version": "1.8.29",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1",
@@ -282,6 +282,17 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.wayfarergames.bulletfury": {
+      "version": "https://github.com/WayfarerGames/bulletfury.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.burst": "1.8.27",
+        "com.unity.collections": "2.6.2",
+        "com.unity.mathematics": "1.3.3"
+      },
+      "hash": "724bbd2433603b382155359e708eeff80c2ee94b"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
