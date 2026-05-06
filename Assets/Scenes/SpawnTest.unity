@@ -164,7 +164,7 @@ MonoBehaviour:
     PlayOnEnable: 1
     FireRate:
       isRandom: 0
-      minValue: 0.1
+      minValue: 0.5
       maxValue: 0.1
     Damage:
       isRandom: 0
@@ -172,11 +172,11 @@ MonoBehaviour:
       maxValue: 1
     Lifetime:
       isRandom: 0
-      minValue: 1.5
+      minValue: 5
       maxValue: 1
     Speed:
       isRandom: 0
-      minValue: 5
+      minValue: 4
       maxValue: 5
     StartColor: {r: 1, g: 0.08018869, b: 0.08018869, a: 1}
     StartSize:
@@ -190,24 +190,24 @@ MonoBehaviour:
     ColliderSize: 1
     CapsuleLength: 0.1
   spawnShapeData:
-    spawnDir: 3
-    numPoints: 4
+    spawnDir: 2
+    numPoints: 5
     numPerSide: 1
     numPerGroup: 1
     groupRadius:
       isRandom: 0
       minValue: 0.25
       maxValue: 0.25
-    spawnCentreBullet: 0
+    spawnCentreBullet: 1
     groupDirection: 0
     removeFromEdgePercent: 0
     radius:
-      isRandom: 0
+      isRandom: 1
       minValue: 0
       maxValue: 1
     arc:
       isRandom: 0
-      minValue: 360
+      minValue: 180
       maxValue: 360
     randomise: 0
     onEdge: 0
@@ -243,13 +243,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628938815}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -1.01, z: 0}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
+  m_LocalPosition: {x: -3.8, y: 3.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!1 &1055809217
 GameObject:
   m_ObjectHideFlags: 0
