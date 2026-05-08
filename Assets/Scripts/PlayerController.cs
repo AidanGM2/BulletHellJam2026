@@ -2,6 +2,7 @@ using BulletFury;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
+using DG.Tweening;
 #endif
 
 namespace BulletFury.Samples
@@ -12,14 +13,20 @@ namespace BulletFury.Samples
     {
         [SerializeField] private BulletSpawner spawner;
         [SerializeField, Min(0f)] private float moveSpeed = 6f;
-        [SerializeField] private float shrinkSize = 0.25f;
+        [SerializeField] private float shrinkSize;
         [SerializeField] private Camera mainCamera;
         [SerializeField] private Camera zoomCamera;
+        [SerializeField] private ZoomCameraScript zCS;
+        [SerializeField] private float tweenSpeed;
 
+        private Animator playerAnimator;
+        private SpriteRenderer playerSprite;
         private Rigidbody2D _rigidbody2D;
         private Vector2 _moveInput;
         private Bounds playerBounds;
         private Vector3 targetPosition;
+        private bool cooldowntimer = true;
+        private bool falsepress = false;
 
 #if ENABLE_INPUT_SYSTEM
         private InputAction _moveAction;
@@ -29,9 +36,12 @@ namespace BulletFury.Samples
 
         private void Awake()
         {
+            playerAnimator = GetComponent<Animator>();
+            playerSprite = GetComponent<SpriteRenderer>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _rigidbody2D.gravityScale = 0f;
             _rigidbody2D.freezeRotation = true;
+            zCS.tweenspeed = tweenSpeed;
         }
 
         private void Start()
@@ -43,6 +53,9 @@ namespace BulletFury.Samples
         private void FixedUpdate()
         {
             var delta = _moveInput * (moveSpeed * Time.fixedDeltaTime);
+            if (_moveInput.x < 0) ChangeLean(-1);
+            else if (_moveInput.x == 0) ChangeLean(0);
+            else if (_moveInput.x > 0) ChangeLean(1);
             if (delta.x > 0 && _rigidbody2D.position.x + delta.x > playerBounds.max.x)
             {
                 delta.x = 0;
@@ -72,7 +85,6 @@ namespace BulletFury.Samples
         {
             float height = GetComponent<SpriteRenderer>().size.x / 2f * transform.localScale.x;
             float width = GetComponent<SpriteRenderer>().size.y / 2f * transform.localScale.y;
-            print(height);
 
             float minX = (Globals.WorldBounds.min.x + width);
             float maxX = (Globals.WorldBounds.extents.x - width);
@@ -96,6 +108,27 @@ namespace BulletFury.Samples
                 );
         }
 
+        private void ChangeLean(float Direction)
+        {
+            switch (Direction){
+                case -1:
+                    playerAnimator.SetTrigger("LeanTrigger");
+                    playerSprite.flipX = true;
+                    break;
+                case 0:
+                    playerAnimator.SetTrigger("ForwardTrigger");
+                    playerSprite.flipX = false;
+                    break;
+                case 1:
+                    playerAnimator.SetTrigger("LeanTrigger");
+                    break;
+            }
+        }
+
+        private void cooldown()
+        {
+            cooldowntimer = true;
+        }
 
 #if ENABLE_INPUT_SYSTEM
         private void OnEnable()
@@ -155,25 +188,32 @@ namespace BulletFury.Samples
 
         private void OnFocusStarted(InputAction.CallbackContext _)
         {
-            moveSpeed = moveSpeed / 2;
-            transform.localScale = new Vector3(shrinkSize, shrinkSize, shrinkSize);
-            mainCamera.enabled = false;
-            zoomCamera.enabled = true;
-            ResizePlayer();
+            if (cooldowntimer == true)
+            {
+                cooldowntimer = false;
+                moveSpeed = moveSpeed / 4;
+                DOTween.To(() => transform.localScale, x => transform.localScale = x, new Vector3(shrinkSize, shrinkSize, shrinkSize), tweenSpeed);
+                ResizePlayer();
+                zCS.shrink();
+            }
+            else falsepress = true;
         }
 
         private void OnFocusCanceled(InputAction.CallbackContext _)
         {
-            moveSpeed = moveSpeed * 2;
-            transform.localScale = new Vector3(1f, 1f, 1f);
-            mainCamera.enabled = true;
-            zoomCamera.enabled = false;
-            ResizePlayer();
-            if (_rigidbody2D.position.x > playerBounds.max.x) _rigidbody2D.position = new Vector2(playerBounds.max.x, _rigidbody2D.position.y);
-            if (_rigidbody2D.position.x < playerBounds.min.x) _rigidbody2D.position = new Vector2(playerBounds.min.x, _rigidbody2D.position.y);
-            if (_rigidbody2D.position.y > playerBounds.max.y) _rigidbody2D.position = new Vector2(_rigidbody2D.position.x, playerBounds.max.y);
-            if (_rigidbody2D.position.y < playerBounds.min.y) _rigidbody2D.position = new Vector2(_rigidbody2D.position.x, playerBounds.min.y);
-
+            if (falsepress == false)
+            {
+                moveSpeed = moveSpeed * 4;
+                DOTween.To(() => transform.localScale, x => transform.localScale = x, new Vector3(1f, 1f, 1f), tweenSpeed);
+                ResizePlayer();
+                Invoke("cooldown", 1f);
+                if (_rigidbody2D.position.x > playerBounds.max.x) _rigidbody2D.position = new Vector2(playerBounds.max.x, _rigidbody2D.position.y);
+                if (_rigidbody2D.position.x < playerBounds.min.x) _rigidbody2D.position = new Vector2(playerBounds.min.x, _rigidbody2D.position.y);
+                if (_rigidbody2D.position.y > playerBounds.max.y) _rigidbody2D.position = new Vector2(_rigidbody2D.position.x, playerBounds.max.y);
+                if (_rigidbody2D.position.y < playerBounds.min.y) _rigidbody2D.position = new Vector2(_rigidbody2D.position.x, playerBounds.min.y);
+                zCS.grow();
+            }
+            else falsepress = false;
         }
 #else
         private void OnEnable()
