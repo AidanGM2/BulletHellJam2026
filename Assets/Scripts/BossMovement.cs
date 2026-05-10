@@ -16,6 +16,9 @@ public class BossMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         currentPoint = pointB.transform;
+        
+        Debug.Log("Hi");
+        
     }
 
     // Update is called once per frame
@@ -31,12 +34,12 @@ public class BossMovement : MonoBehaviour
             rb.linearVelocity = new Vector2( -bossMoveSpeed, 0);
         }
 
-        if(Vector2.Distance(currentPoint.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
+        if(Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
         {
             currentPoint = pointA.transform;
-            Debug.Log("Made it to point B");
+            
         }
-        if (Vector2.Distance(currentPoint.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform)
+        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform)
         {
             currentPoint = pointB.transform;
         }
