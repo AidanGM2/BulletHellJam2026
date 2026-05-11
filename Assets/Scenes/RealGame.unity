@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 7c943ad731a65a044bac2e3c366c6788, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -210,6 +210,142 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.241}
+--- !u!1 &133454437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 133454438}
+  - component: {fileID: 133454439}
+  m_Layer: 0
+  m_Name: Phase3BulletSpawner2 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &133454438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133454437}
+  serializedVersion: 2
+  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalPosition: {x: -0.013259992, y: -0.03627999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5607194065587425989}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!114 &133454439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133454437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2583716d8b9a4cf9ae2a2a52c75333ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: WayfarerGames.Bulletfury::BulletFury.BulletSpawner
+  renderData:
+    singleData:
+      Camera: {fileID: 0}
+      Texture: {fileID: 0}
+      Animated: 0
+      Rows: 1
+      Columns: 1
+      PerFrameLength: 0.1
+      Layer: 0
+      Priority: 0
+    sharedData: {fileID: 11400000, guid: 77c65f35863e3294cba11502f00720fa, type: 2}
+  main:
+    FireMode: 0
+    PlayOnEnable: 1
+    FireRate:
+      isRandom: 0
+      minValue: 1
+      maxValue: 0.1
+    Damage:
+      isRandom: 0
+      minValue: 0
+      maxValue: 1
+    Lifetime:
+      isRandom: 0
+      minValue: 8
+      maxValue: 1
+    Speed:
+      isRandom: 0
+      minValue: 3
+      maxValue: 5
+    StartColor: {r: 1, g: 1, b: 1, a: 1}
+    StartSize:
+      isRandom: 0
+      minValue: 0.5
+      maxValue: 1
+    UseRotationForDirection: 0
+    MoveWithTransform: 0
+    RotateWithTransform: 0
+    ColliderType: 0
+    ColliderSize: 0.872
+    CapsuleLength: 0.1
+  spawnShapeData:
+    spawnDir: 2
+    numPoints: 30
+    numPerSide: 1
+    numPerGroup: 30
+    groupRadius:
+      isRandom: 0
+      minValue: 0.8
+      maxValue: 0.8
+    spawnCentreBullet: 0
+    groupDirection: 0
+    removeFromEdgePercent: 0
+    radius:
+      isRandom: 0
+      minValue: 0
+      maxValue: 1
+    arc:
+      isRandom: 0
+      minValue: 360
+      maxValue: 360
+    randomise: 0
+    onEdge: 0
+    directionArc:
+      isRandom: 0
+      minValue: 360
+      maxValue: 360
+  burstData:
+    delay: 1
+    maxActiveBullets: 500
+    burstCount: 0
+    burstDelay: 2
+    stackSpeedIncrease: 0
+    burstsUpdatePositionEveryBullet: 0
+  allModules:
+  - rid: 3483215696606265426
+  OnBulletDied:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBulletSpawned:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWeaponFired:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 3483215696606265426
+      type: {class: SpawnerRotateModule, ns: BulletFury.Modules, asm: WayfarerGames.Bulletfury}
+      data:
+        angularSpeed: 1000
 --- !u!1 &194604127
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +574,143 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203754572}
   m_CullTransparentMesh: 1
+--- !u!1001 &241491781
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 242453356222352846, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8875
+      objectReference: {fileID: 0}
+    - target: {fileID: 564162562602765197, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 564162562602765197, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 801676090281664062, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_Value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 801676090281664062, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_MaxValue
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873329636965453242, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_Value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1873329636965453242, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_MaxValue
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918935485455424718, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_Name
+      value: BossHealthDisplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251399887375904625, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251399887375904625, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410405802638947473, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266470125156907325, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
 --- !u!1 &384214045
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,6 +975,7 @@ GameObject:
   - component: {fileID: 408149612}
   - component: {fileID: 408149611}
   - component: {fileID: 408149616}
+  - component: {fileID: 408149617}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -721,7 +995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7e4a65a1ac6f045b6604c0da62779d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletFury.Samples.PlayerController
-  spawner: {fileID: 0}
+  spawner: {fileID: 1412740074}
   moveSpeed: 25
   shrinkSize: 0.2
   mainCamera: {fileID: 1864994097}
@@ -763,7 +1037,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1.28
+  m_Radius: 0.15
 --- !u!50 &408149613
 Rigidbody2D:
   serializedVersion: 5
@@ -864,6 +1138,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1412740073}
+  - {fileID: 1954798412}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &408149616
@@ -888,6 +1163,298 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &408149617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408149610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee18e4cd1b9446dfb2748810bff88af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletFury.Samples.DemoHitFlash
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
+  flashDuration: 0.08
+--- !u!1 &564344855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 564344856}
+  - component: {fileID: 564344857}
+  m_Layer: 0
+  m_Name: Phase2BulletSpawner2 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &564344856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564344855}
+  serializedVersion: 2
+  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalPosition: {x: -0.013259992, y: -0.03627999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5607194065587425989}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!114 &564344857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564344855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2583716d8b9a4cf9ae2a2a52c75333ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: WayfarerGames.Bulletfury::BulletFury.BulletSpawner
+  renderData:
+    singleData:
+      Camera: {fileID: 0}
+      Texture: {fileID: 0}
+      Animated: 0
+      Rows: 1
+      Columns: 1
+      PerFrameLength: 0.1
+      Layer: 0
+      Priority: 0
+    sharedData: {fileID: 11400000, guid: 77c65f35863e3294cba11502f00720fa, type: 2}
+  main:
+    FireMode: 0
+    PlayOnEnable: 1
+    FireRate:
+      isRandom: 0
+      minValue: 2
+      maxValue: 0.1
+    Damage:
+      isRandom: 0
+      minValue: 0
+      maxValue: 1
+    Lifetime:
+      isRandom: 0
+      minValue: 8
+      maxValue: 1
+    Speed:
+      isRandom: 0
+      minValue: 3
+      maxValue: 5
+    StartColor: {r: 1, g: 1, b: 1, a: 1}
+    StartSize:
+      isRandom: 0
+      minValue: 0.5
+      maxValue: 1
+    UseRotationForDirection: 0
+    MoveWithTransform: 0
+    RotateWithTransform: 0
+    ColliderType: 0
+    ColliderSize: 0.872
+    CapsuleLength: 0.1
+  spawnShapeData:
+    spawnDir: 2
+    numPoints: 20
+    numPerSide: 1
+    numPerGroup: 3
+    groupRadius:
+      isRandom: 1
+      minValue: 0.8
+      maxValue: 0.8
+    spawnCentreBullet: 0
+    groupDirection: 1
+    removeFromEdgePercent: 0
+    radius:
+      isRandom: 0
+      minValue: 0
+      maxValue: 1
+    arc:
+      isRandom: 0
+      minValue: 360
+      maxValue: 360
+    randomise: 0
+    onEdge: 0
+    directionArc:
+      isRandom: 0
+      minValue: 360
+      maxValue: 360
+  burstData:
+    delay: 1
+    maxActiveBullets: 0
+    burstCount: 2
+    burstDelay: 2
+    stackSpeedIncrease: 0
+    burstsUpdatePositionEveryBullet: 0
+  allModules:
+  - rid: 3483215696606265426
+  OnBulletDied:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBulletSpawned:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWeaponFired:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 3483215696606265426
+      type: {class: SpawnerRotateModule, ns: BulletFury.Modules, asm: WayfarerGames.Bulletfury}
+      data:
+        angularSpeed: 8
+--- !u!114 &689770210 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 801676090281664062, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+  m_PrefabInstance: {fileID: 241491781}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!1 &797131951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 797131952}
+  - component: {fileID: 797131953}
+  m_Layer: 0
+  m_Name: Phase3BulletSpawner (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &797131952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797131951}
+  serializedVersion: 2
+  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalPosition: {x: -0.013259992, y: -0.03627999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5607194065587425989}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!114 &797131953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797131951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2583716d8b9a4cf9ae2a2a52c75333ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: WayfarerGames.Bulletfury::BulletFury.BulletSpawner
+  renderData:
+    singleData:
+      Camera: {fileID: 0}
+      Texture: {fileID: 0}
+      Animated: 0
+      Rows: 1
+      Columns: 1
+      PerFrameLength: 0.1
+      Layer: 0
+      Priority: 0
+    sharedData: {fileID: 11400000, guid: b78c6ca7e2f4440babfcca90bb13f4d2, type: 2}
+  main:
+    FireMode: 0
+    PlayOnEnable: 1
+    FireRate:
+      isRandom: 0
+      minValue: 4
+      maxValue: 0.1
+    Damage:
+      isRandom: 0
+      minValue: 0
+      maxValue: 1
+    Lifetime:
+      isRandom: 0
+      minValue: 15
+      maxValue: 1
+    Speed:
+      isRandom: 0
+      minValue: 1
+      maxValue: 5
+    StartColor: {r: 1, g: 1, b: 1, a: 1}
+    StartSize:
+      isRandom: 0
+      minValue: 1
+      maxValue: 1
+    UseRotationForDirection: 0
+    MoveWithTransform: 0
+    RotateWithTransform: 0
+    ColliderType: 0
+    ColliderSize: 0.858
+    CapsuleLength: 0.1
+  spawnShapeData:
+    spawnDir: 4
+    numPoints: 20
+    numPerSide: 1
+    numPerGroup: 1
+    groupRadius:
+      isRandom: 0
+      minValue: 1
+      maxValue: 0.25
+    spawnCentreBullet: 1
+    groupDirection: 0
+    removeFromEdgePercent: 0
+    radius:
+      isRandom: 0
+      minValue: 0
+      maxValue: 1
+    arc:
+      isRandom: 0
+      minValue: 190
+      maxValue: 170
+    randomise: 0
+    onEdge: 0
+    directionArc:
+      isRandom: 0
+      minValue: 360
+      maxValue: 360
+  burstData:
+    delay: 1
+    maxActiveBullets: 0
+    burstCount: 1
+    burstDelay: 0
+    stackSpeedIncrease: 0
+    burstsUpdatePositionEveryBullet: 1
+  allModules: []
+  OnBulletDied:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBulletSpawned:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWeaponFired:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &862780244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,7 +1816,7 @@ MonoBehaviour:
       PerFrameLength: 0.1
       Layer: 0
       Priority: 0
-    sharedData: {fileID: 0}
+    sharedData: {fileID: 11400000, guid: affde8efd2e258341bfaf8fde41f01f6, type: 2}
   main:
     FireMode: 0
     PlayOnEnable: 0
@@ -1259,7 +1826,7 @@ MonoBehaviour:
       maxValue: 0.1
     Damage:
       isRandom: 0
-      minValue: 1
+      minValue: 0.01
       maxValue: 1
     Lifetime:
       isRandom: 0
@@ -1465,6 +2032,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0.433, y: 0.062, z: 8.103}
+--- !u!114 &1606846985 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1873329636965453242, guid: cfebd0122ef5a3f4da47fa09853cd679, type: 3}
+  m_PrefabInstance: {fileID: 241491781}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1 &1762639409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,6 +2485,142 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.123}
+--- !u!1 &1921434788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1921434789}
+  - component: {fileID: 1921434790}
+  m_Layer: 0
+  m_Name: Phase2BulletSpawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1921434789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921434788}
+  serializedVersion: 2
+  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalPosition: {x: -0.013259992, y: -0.03627999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5607194065587425989}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!114 &1921434790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921434788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2583716d8b9a4cf9ae2a2a52c75333ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: WayfarerGames.Bulletfury::BulletFury.BulletSpawner
+  renderData:
+    singleData:
+      Camera: {fileID: 0}
+      Texture: {fileID: 0}
+      Animated: 0
+      Rows: 1
+      Columns: 1
+      PerFrameLength: 0.1
+      Layer: 0
+      Priority: 0
+    sharedData: {fileID: 11400000, guid: b78c6ca7e2f4440babfcca90bb13f4d2, type: 2}
+  main:
+    FireMode: 0
+    PlayOnEnable: 1
+    FireRate:
+      isRandom: 0
+      minValue: 1
+      maxValue: 0.1
+    Damage:
+      isRandom: 0
+      minValue: 0
+      maxValue: 1
+    Lifetime:
+      isRandom: 0
+      minValue: 5
+      maxValue: 1
+    Speed:
+      isRandom: 0
+      minValue: 3
+      maxValue: 5
+    StartColor: {r: 1, g: 1, b: 1, a: 1}
+    StartSize:
+      isRandom: 0
+      minValue: 1
+      maxValue: 1
+    UseRotationForDirection: 0
+    MoveWithTransform: 0
+    RotateWithTransform: 0
+    ColliderType: 0
+    ColliderSize: 0.858
+    CapsuleLength: 0.1
+  spawnShapeData:
+    spawnDir: 0
+    numPoints: 40
+    numPerSide: 1
+    numPerGroup: 1
+    groupRadius:
+      isRandom: 0
+      minValue: 0.25
+      maxValue: 0.25
+    spawnCentreBullet: 1
+    groupDirection: 0
+    removeFromEdgePercent: 0
+    radius:
+      isRandom: 0
+      minValue: 0
+      maxValue: 1
+    arc:
+      isRandom: 0
+      minValue: 90
+      maxValue: 170
+    randomise: 0
+    onEdge: 0
+    directionArc:
+      isRandom: 0
+      minValue: 360
+      maxValue: 360
+  burstData:
+    delay: 1
+    maxActiveBullets: 0
+    burstCount: 1
+    burstDelay: 0
+    stackSpeedIncrease: 0
+    burstsUpdatePositionEveryBullet: 1
+  allModules:
+  - rid: 6268693008848257254
+  OnBulletDied:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBulletSpawned:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWeaponFired:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 6268693008848257254
+      type: {class: SpawnerRotateModule, ns: BulletFury.Modules, asm: WayfarerGames.Bulletfury}
+      data:
+        angularSpeed: 100
 --- !u!1 &1943507698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1998,6 +2712,97 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -15.578}
+--- !u!1 &1954798411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1954798412}
+  - component: {fileID: 1954798413}
+  m_Layer: 0
+  m_Name: Hitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1954798412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954798411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2929, y: 0.2929, z: 0.2929}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 408149615}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1954798413
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954798411}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1 &2137930431
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,6 +2876,552 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137930431}
   m_CullTransparentMesh: 1
+--- !u!114 &352118551200918982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6823091506970320063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04dbf1e75737282448c6b988bd6a0d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBar
+  healthSlider: {fileID: 689770210}
+  easeHealthSlider: {fileID: 1606846985}
+  maxHealth: 300
+  health: 0
+  lerpSpeed: 0.1
+  phase1BIG: {fileID: 4595847360993362705}
+  phase1SML: {fileID: 5555890653185295876}
+  phase2BIG: {fileID: 1921434788}
+  phase2SML: {fileID: 564344855}
+  phase3BIG: {fileID: 0}
+  phase3SML: {fileID: 0}
+--- !u!4 &1476486740953143712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2773577414073636729}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.6600003, y: -96.29, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2327920671079359535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6719895882252096016}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.7599998, y: -96.29, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2426255171206184972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6823091506970320063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ce06a6defc4c74d9c4ae53a7c7c121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossMovement
+  pointA: {fileID: 6719895882252096016}
+  pointB: {fileID: 2773577414073636729}
+  bossMoveSpeed: 1
+--- !u!1 &2773577414073636729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1476486740953143712}
+  m_Layer: 0
+  m_Name: PointB
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &3250895323747429609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595847360993362705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2583716d8b9a4cf9ae2a2a52c75333ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: WayfarerGames.Bulletfury::BulletFury.BulletSpawner
+  renderData:
+    singleData:
+      Camera: {fileID: 0}
+      Texture: {fileID: 0}
+      Animated: 0
+      Rows: 1
+      Columns: 1
+      PerFrameLength: 0.1
+      Layer: 0
+      Priority: 0
+    sharedData: {fileID: 11400000, guid: b78c6ca7e2f4440babfcca90bb13f4d2, type: 2}
+  main:
+    FireMode: 0
+    PlayOnEnable: 1
+    FireRate:
+      isRandom: 0
+      minValue: 1
+      maxValue: 0.1
+    Damage:
+      isRandom: 0
+      minValue: 0
+      maxValue: 1
+    Lifetime:
+      isRandom: 0
+      minValue: 5
+      maxValue: 1
+    Speed:
+      isRandom: 0
+      minValue: 4
+      maxValue: 5
+    StartColor: {r: 1, g: 1, b: 1, a: 1}
+    StartSize:
+      isRandom: 0
+      minValue: 1
+      maxValue: 1
+    UseRotationForDirection: 0
+    MoveWithTransform: 0
+    RotateWithTransform: 0
+    ColliderType: 0
+    ColliderSize: 0.858
+    CapsuleLength: 0.1
+  spawnShapeData:
+    spawnDir: 2
+    numPoints: 13
+    numPerSide: 1
+    numPerGroup: 1
+    groupRadius:
+      isRandom: 0
+      minValue: 0.25
+      maxValue: 0.25
+    spawnCentreBullet: 1
+    groupDirection: 0
+    removeFromEdgePercent: 0
+    radius:
+      isRandom: 1
+      minValue: 0
+      maxValue: 1
+    arc:
+      isRandom: 0
+      minValue: 360
+      maxValue: 170
+    randomise: 0
+    onEdge: 0
+    directionArc:
+      isRandom: 0
+      minValue: 360
+      maxValue: 360
+  burstData:
+    delay: 1
+    maxActiveBullets: 0
+    burstCount: 1
+    burstDelay: 0
+    stackSpeedIncrease: 0
+    burstsUpdatePositionEveryBullet: 1
+  allModules:
+  - rid: 6268693008848257254
+  OnBulletDied:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBulletSpawned:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWeaponFired:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 6268693008848257254
+      type: {class: SpawnerRotateModule, ns: BulletFury.Modules, asm: WayfarerGames.Bulletfury}
+      data:
+        angularSpeed: 100
+--- !u!1 &4595847360993362705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8009725269062818957}
+  - component: {fileID: 3250895323747429609}
+  m_Layer: 0
+  m_Name: Phase1BulletSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &5555890653185295876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6242802132376145005}
+  - component: {fileID: 8954146952489078430}
+  m_Layer: 0
+  m_Name: Phase1BulletSpawner2
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5607194065587425989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6823091506970320063}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.11, y: -96.29, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8009725269062818957}
+  - {fileID: 6242802132376145005}
+  - {fileID: 1921434789}
+  - {fileID: 564344856}
+  - {fileID: 797131952}
+  - {fileID: 133454438}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &6242802132376145005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555890653185295876}
+  serializedVersion: 2
+  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalPosition: {x: -0.013259992, y: -0.03627999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5607194065587425989}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!1 &6719895882252096016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2327920671079359535}
+  m_Layer: 0
+  m_Name: PointA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &6823091506970320063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5607194065587425989}
+  - component: {fileID: 8250265503385534293}
+  - component: {fileID: 8151024161277145111}
+  - component: {fileID: 2426255171206184972}
+  - component: {fileID: 6980346028366767164}
+  - component: {fileID: 352118551200918982}
+  m_Layer: 0
+  m_Name: Boss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &6980346028366767164
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6823091506970320063}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2, y: 2}
+  m_EdgeRadius: 0
+--- !u!4 &8009725269062818957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595847360993362705}
+  serializedVersion: 2
+  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalPosition: {x: -0.013259992, y: -0.03627999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5607194065587425989}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!50 &8151024161277145111
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6823091506970320063}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 6
+--- !u!212 &8250265503385534293
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6823091506970320063}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 6d4c50c01cbc39242919fb3374f2bbd1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+--- !u!114 &8954146952489078430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555890653185295876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2583716d8b9a4cf9ae2a2a52c75333ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: WayfarerGames.Bulletfury::BulletFury.BulletSpawner
+  renderData:
+    singleData:
+      Camera: {fileID: 0}
+      Texture: {fileID: 0}
+      Animated: 0
+      Rows: 1
+      Columns: 1
+      PerFrameLength: 0.1
+      Layer: 0
+      Priority: 0
+    sharedData: {fileID: 11400000, guid: 77c65f35863e3294cba11502f00720fa, type: 2}
+  main:
+    FireMode: 0
+    PlayOnEnable: 1
+    FireRate:
+      isRandom: 0
+      minValue: 2
+      maxValue: 0.1
+    Damage:
+      isRandom: 0
+      minValue: 0
+      maxValue: 1
+    Lifetime:
+      isRandom: 0
+      minValue: 8
+      maxValue: 1
+    Speed:
+      isRandom: 0
+      minValue: 2
+      maxValue: 5
+    StartColor: {r: 1, g: 1, b: 1, a: 1}
+    StartSize:
+      isRandom: 0
+      minValue: 0.5
+      maxValue: 1
+    UseRotationForDirection: 0
+    MoveWithTransform: 0
+    RotateWithTransform: 0
+    ColliderType: 0
+    ColliderSize: 0.872
+    CapsuleLength: 0.1
+  spawnShapeData:
+    spawnDir: 2
+    numPoints: 8
+    numPerSide: 1
+    numPerGroup: 3
+    groupRadius:
+      isRandom: 1
+      minValue: 0.7
+      maxValue: 0.7
+    spawnCentreBullet: 0
+    groupDirection: 1
+    removeFromEdgePercent: 0
+    radius:
+      isRandom: 0
+      minValue: 0
+      maxValue: 1
+    arc:
+      isRandom: 0
+      minValue: 360
+      maxValue: 360
+    randomise: 0
+    onEdge: 0
+    directionArc:
+      isRandom: 0
+      minValue: 360
+      maxValue: 360
+  burstData:
+    delay: 1
+    maxActiveBullets: 0
+    burstCount: 1
+    burstDelay: 2
+    stackSpeedIncrease: 0
+    burstsUpdatePositionEveryBullet: 0
+  allModules:
+  - rid: 3483215696606265426
+  OnBulletDied:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBulletSpawned:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWeaponFired:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 3483215696606265426
+      type: {class: SpawnerRotateModule, ns: BulletFury.Modules, asm: WayfarerGames.Bulletfury}
+      data:
+        angularSpeed: 8
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2088,3 +3439,7 @@ SceneRoots:
   - {fileID: 194604129}
   - {fileID: 1579179613}
   - {fileID: 1763261328}
+  - {fileID: 2327920671079359535}
+  - {fileID: 1476486740953143712}
+  - {fileID: 5607194065587425989}
+  - {fileID: 241491781}

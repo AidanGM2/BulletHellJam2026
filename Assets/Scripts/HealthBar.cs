@@ -12,6 +12,17 @@ public class HealthBar : MonoBehaviour, IBulletHitHandler
     public float health;
     public float lerpSpeed = 0.01f;
 
+
+    public GameObject phase1BIG;
+    public GameObject phase1SML;
+
+    public GameObject phase2BIG;
+    public GameObject phase2SML;
+
+    public GameObject phase3BIG;
+    public GameObject phase3SML;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,6 +48,7 @@ public class HealthBar : MonoBehaviour, IBulletHitHandler
             easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, health,lerpSpeed);
         }
 
+        CheckPhase();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -48,6 +60,26 @@ public class HealthBar : MonoBehaviour, IBulletHitHandler
         }
     }
 
+    void CheckPhase()
+    {
+        if (health <= 200 && health > 100)
+        {
+            phase1BIG.SetActive(false);
+            phase1SML.SetActive(false);
+            phase2BIG.SetActive(true);
+            phase2SML.SetActive(true);
+            //Debug.Log("Start phase 2");
+        } else if (health <= 100 && health > 0)
+        {
+            phase2BIG.SetActive(false);
+            phase2SML.SetActive(false);
+            //Debug.Log("Start phase 3");
+        } else if (health <= 0)
+        {
+            //Debug.Log("Dead 3");
+
+        }
+    }
 
     void takeDamage(float damage)
     {

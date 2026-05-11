@@ -144,7 +144,7 @@ namespace BulletFury.Samples
                 _moveAction.performed += OnMovePerformed;
                 _moveAction.canceled += OnMoveCanceled;
 
-                _fireAction = new InputAction("Fire", InputActionType.Button, "<Keyboard>/x");
+                _fireAction = new InputAction("Fire", InputActionType.Button, "<Keyboard>/space");
                 _fireAction.started += OnFireStarted;
                 _fireAction.canceled += OnFireCanceled;
 
