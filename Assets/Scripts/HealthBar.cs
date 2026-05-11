@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using BulletFury;
+using BulletFury.Data;
 
-public class HealthBar : MonoBehaviour
+public class HealthBar : MonoBehaviour, IBulletHitHandler
 {
     public Slider healthSlider;
     public Slider easeHealthSlider;
@@ -37,8 +39,23 @@ public class HealthBar : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.layer == 7)
+        {
+            takeDamage(10);
+            Debug.Log("Hit by big player bullet");
+        }
+    }
+
+
     void takeDamage(float damage)
     {
         health -= damage;
+    }
+
+    public void Hit(BulletContainer bullet)
+    {
+        health -= bullet.Damage;
     }
 }

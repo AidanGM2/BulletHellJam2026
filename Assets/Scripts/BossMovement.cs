@@ -14,6 +14,8 @@ public class BossMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Physics.IgnoreLayerCollision(6,5);
+
         rb = GetComponent<Rigidbody2D>();
         currentPoint = pointB.transform;
         

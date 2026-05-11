@@ -11,9 +11,9 @@ TagManager:
   - BG
   - Water
   - UI
-  - 
-  - 
-  - 
+  - LargeEnemyBullet
+  - LargePlayerBullet
+  - SmallPlayerBullet
   - 
   - 
   - 

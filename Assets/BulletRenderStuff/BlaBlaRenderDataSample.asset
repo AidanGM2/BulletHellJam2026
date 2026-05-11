@@ -19,5 +19,5 @@ MonoBehaviour:
     Rows: 1
     Columns: 1
     PerFrameLength: 0.1
-    Layer: 0
-    Priority: 0
+    Layer: 6
+    Priority: 1
