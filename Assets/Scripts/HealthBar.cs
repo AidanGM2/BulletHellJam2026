@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using BulletFury;
 using BulletFury.Data;
+using UnityEngine.SceneManagement;
 
 public class HealthBar : MonoBehaviour, IBulletHitHandler
 {
@@ -21,12 +22,17 @@ public class HealthBar : MonoBehaviour, IBulletHitHandler
 
     public GameObject phase3BIG;
     public GameObject phase3SML;
+    public GameObject phse3SML2;
 
+  //  public GameObject BG1;
+  //  public GameObject BG2;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         health = maxHealth;
+     //   BG1.SetActive(true);
+     //   BG2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,10 +43,7 @@ public class HealthBar : MonoBehaviour, IBulletHitHandler
             healthSlider.value = health;
         } 
 
-       if (Keyboard.current.eKey.wasPressedThisFrame)
-        {
-            takeDamage(10);
-        }
+     
 
 
        if (healthSlider.value != easeHealthSlider.value)
@@ -66,16 +69,29 @@ public class HealthBar : MonoBehaviour, IBulletHitHandler
         {
             phase1BIG.SetActive(false);
             phase1SML.SetActive(false);
-            phase2BIG.SetActive(true);
-            phase2SML.SetActive(true);
+
+           
+
+            phase3BIG.SetActive(true);
+            phase3SML.SetActive(true);
+            phse3SML2.SetActive(true);
             //Debug.Log("Start phase 2");
         } else if (health <= 100 && health > 0)
         {
-            phase2BIG.SetActive(false);
-            phase2SML.SetActive(false);
+            //  BG1.SetActive(false);
+            //  BG2.SetActive(true);
+
+            phase3BIG.SetActive(false);
+            phase3SML.SetActive(false);
+            phse3SML2.SetActive(false);
+
+
+            phase2BIG.SetActive(true);
+            phase2SML.SetActive(true);
             //Debug.Log("Start phase 3");
         } else if (health <= 0)
         {
+            SceneManager.LoadScene(3);
             //Debug.Log("Dead 3");
 
         }

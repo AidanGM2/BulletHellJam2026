@@ -2,6 +2,8 @@ using System.Collections;
 using BulletFury;
 using BulletFury.Data;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace BulletFury.Samples
 {
@@ -16,11 +18,44 @@ namespace BulletFury.Samples
         private Color _baseColor;
         private Coroutine _flashRoutine;
 
+       
+
+        public Slider healthSlider;
+        public Slider easeHealthSlider;
+        public float maxHealth = 10f;
+        public float health;
+        public float lerpSpeed = 0.01f;
+
         private void Awake()
         {
+            health = maxHealth;
+
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _baseColor = _spriteRenderer.color;
         }
+
+
+        private void Update()
+        {
+            if (healthSlider.value != health)
+            {
+                healthSlider.value = health;
+            }
+
+
+            if (healthSlider.value != easeHealthSlider.value)
+            {
+                easeHealthSlider.value = Mathf.Lerp(easeHealthSlider.value, health, lerpSpeed);
+            }
+
+            if (health <= 0)
+            {
+                SceneManager.LoadScene(2);
+            }
+
+        }
+
+      
 
         public void Hit(BulletContainer bullet)
         {
@@ -31,6 +66,9 @@ namespace BulletFury.Samples
                 StopCoroutine(_flashRoutine);
 
             _flashRoutine = StartCoroutine(FlashRoutine());
+
+            health -= 1;
+
         }
 
         private IEnumerator FlashRoutine()
